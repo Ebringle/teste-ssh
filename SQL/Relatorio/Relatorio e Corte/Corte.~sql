@@ -1,0 +1,31 @@
+SELECT 
+
+  M.DATA,
+  M.NUMCAR,
+  P.DESCRICAO,
+  M.NUMPED,
+  M.QTORIG,
+  C.QTCORTADA,
+ (c.qtcortada * c.pvenda) as vlcorte,
+  C.qtseparada,
+  --- Valor Separado
+  (c.qtseparada * c.pvenda) as vlSeparada,
+  --- Estoque
+  (m.qtorig - c.qtseparada) as Estoque,
+  --- Valor Estoque
+  (m.qtorig * c.pvenda) as VlEstoque
+    
+FROM CF_MOVENDPEND M
+ 
+     INNER JOIN PCEMPR   A ON (M.CODFUNCOS = A.MATRICULA)
+     INNER JOIN PCCORTEI C ON (C.CODPROD = M.CODPROD)
+     INNER JOIN PCPRODUT P ON (P.CODPROD = M.CODPROD)
+
+where 
+
+     C.DATA BETWEEN : AND : 
+     AND M.NUMPED : 
+     AND C.NUMCAR BETWEEN : AND :  
+     
+     
+

@@ -1,0 +1,24 @@
+juliano
+ju341l1no
+
+*wint*
+
+WINT =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.10.132)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SID = WINT)
+    )
+  )
+
+
+______________________________________
+
+homologa
+homologa
+TESTE
+
+
+_____________________________________

@@ -1,0 +1,51 @@
+SELECT
+
+  P.CODPROD,
+  P.DESCRICAO,
+  I.DATA,
+  I.NUMPED,
+  I.CODCLI,
+  I.QT,
+  M.NUMCAR,
+  M.NUMNOTA,
+  M.CODFILIAL,
+  M.STATUS,
+  N.NUMNOTA,
+  N.CHAVENFE,
+  N.SITUACAONFE
+
+FROM
+
+  PCPRODUT P,
+  PCPEDI I,
+  PCMOV M,
+  PCNFSAID N,
+  
+  (SELECT * FROM PCPEDI WHERE
+   CODPROD = '90410' AND
+   CODCLI <> '1' and
+   DATA between  '22/nov/2022' AND
+   numped = '4123597'
+  )
+  
+WHERE
+
+  P.CODPROD = M.CODPROD AND
+  I.CODCLI = M.CODCLI AND
+  I.NUMPED = M.NUMPED
+  
+  
+  
+     
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
